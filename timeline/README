@@ -1,0 +1,8 @@
+======
+This programm is written for Processing 1.5.
+
+It produces a timeline where several items can be pinned down.
+
+it uses as input an XML and outputs a PDF file.
+
+For instruccions of use see the main file timeline-skeletop.pde
