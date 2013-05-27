@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- This is a general purpose file to store the data to be displayed on the timeline_skeleton processing sketch. -->
+
+<!-- The file is structured as a collection of similar items. Each item consits of a series of data about it. Name and a date are the only required data to locate the item on the timeline by the processing sketch. Additional data about each item can be added. -->
+
+<!-- This file conformes to the xml schema file: item.xsd. If you want to change its structure, add different elements or change the name of the tags, I recommend changing first that file. -->
+
+<!-- timeline-items.xml 
+    Copyright (C) 2013  Ricardo Cedeño Montaña
+    Humboldt-Universität zu Berlin. Institute of Cultural History and Theory
+    rcedenom[at]pktweb[dot]com
+    http://pktweb.com, http://drnn1076.pktweb.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. -->
+
+<!-- Last update on 30 January 2013. Ricardo Cedeño Montaña -->
+
+
+
+<items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="timeline-item.xsd">
+  
+		<!-- Repeat for each format <item>... -->
+	<item>
+		<name>Discurso 1</name>
+		<date>
+		  <year>1870</year>
+		</date>
+		<info>Include here some more information</info>
+	</item>
+	<item>
+		<name>Discurso 2</name>
+		<date>
+		  <year>1880</year>
+		</date>
+		<info>Include here some more information</info>
+	</item>
+	<item>
+		<name>Discurso 2</name>
+		<date>
+		  <year>1880</year>
+		</date>
+		<info>Include here some more information</info>
+	</item>
+	<item>
+		<name>Discurso 2</name>
+		<date>
+		  <year>1880</year>
+		</date>
+		<info>Include here some more information</info>
+	</item>
+	<item>
+		<name>Discurso 2</name>
+		<date>
+		  <year>1880</year>
+		</date>
+		<info>Include here some more information</info>
+	</item>
+	<item>
+		<name>Discurso 3</name>
+		<date>
+		  <year>1950</year>
+		</date>
+		<info>Include here some more information</info>
+	</item>
+</items>  
