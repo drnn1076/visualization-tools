@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file describes the struture of the timeline-items.xml file. -->
+<!-- To change the name, type, or sequence of elements of the xml file, please first describe these changes here. To add new elements to the xml file, please describe them first here. That description should include name, type, and location. 
+
+If you are not used to XML schema follow the example given by this file or consult 
+
+http://www.w3schools.com/schema/default.asp
+
+http://www.w3.org/standards/xml/schema 
+
+-->
+
+<!--timeline-items.xsd 
+    Copyright (C) 2013  Ricardo Cedeño Montaña 
+    Humboldt-Universität zu Berlin. Institute of Cultural History and Theory
+    rcedenom[at]pktweb[dot]com
+    http://pktweb.com, http://drnn1076.pktweb.com
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program.  If not, see <http://www.gnu.org/licenses/>. -->
+
+
+
+<!-- Last update on 30 January 2013. Ricardo Cedeño Montaña -->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  
+	<!-- First define the simple elements -->
+	<xs:element name="name" type="xs:string"/>
+	<xs:element name="year" type="xs:gYear"/>
+	<xs:element name="info" type="xs:string"/>
+	
+	
+	<!-- Second define the complex elements-->
+	
+	<xs:element name="items">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="item" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+	<xs:element name="item">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="name"/>
+				<xs:element ref="date"/>
+				<xs:element ref="info" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="date">
+		<xs:complexType>
+			<xs:sequence>
+			  <xs:element ref="year"/>  
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+</xs:schema>
