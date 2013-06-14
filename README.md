@@ -11,3 +11,5 @@ Versions
 timeline works in processing 1.5
 
 timeline_skeleton_2 works in processing 2.0
+
+In both version the file to be executed in processing is timeline_skeleton.pde
