@@ -2,9 +2,9 @@
 // Generate a list of years
 int[] allYears;
 int[] allYears(){  
-  allYears = new int[(end - begin)+1];
-  for (int i=0; i<=(allYears.length-1); i++){
-    allYears[i]= i + begin;
+  allYears = new int[(end - begin)+1]; // +1 to include the fisrt year.
+  for (int i=0; i<=(allYears.length-1); i++){ //-1 cause it counts from 0
+    allYears[i]= i + (begin);
   }
   return allYears;
 }
@@ -16,7 +16,6 @@ int[] listPosY(){
   factorDisplacementYear = 0;  //Reset the factor for each call of this function.
   for ( int i=0; i<=(listPosY.length-1); i++){ //Call the factor of displacement.
     listPosY[i] = (i*leading)+(leading*factorDisplacementYear(allYears[i]));
-    //println(factorDisplacementYear(allYears[i]));
   }
   return listPosY;
 }
@@ -56,7 +55,7 @@ int factorDisplacementYear(int pYear){
 
 void timeLine(int begin, int end){
   xml = loadXML("timeline-items.xml");
-  int nodes = xml.getChildCount();
+  //int nodes = xml.getChildCount();
   ArrayList itemYears = new ArrayList(); //Array to store all years with an item.
   
   XML[] items = xml.getChildren("item");
@@ -71,11 +70,12 @@ void timeLine(int begin, int end){
   textFont(regular);
   textAlign(CENTER);
 
-  for (int yNumber=0; yNumber<(end-begin); yNumber++){
+  for (int yNumber=0; yNumber<((end-begin)+1); yNumber++){
     // List all years
     int aYear = allYears()[yNumber];
     // Get postions for each year
     int posY = listPosY()[yNumber];
+    println(posY);
     //If that year has an item, set fill to black and font size to 16pts.
     if (itemYears.contains(aYear)){
       fill(0);
@@ -85,18 +85,21 @@ void timeLine(int begin, int end){
       textSize(12);
     }
 
-    // Write the text of the year
-    if (yNumber>0){
+    // Write the text of the year. Use ">=" to include the first year in the list
+    if (yNumber>=0){
     text(str(aYear), 0, posY);
     }
     
     //  lines
-    stroke(200);// Stroke colour: grey
-    line(-timelineWidth/2,(posY)+3, timelineWidth/2,(posY)+3);
+    stroke(220);// Stroke colour: grey
+    line(-timelineWidth/2,(posY+3), timelineWidth/2,(posY+3));
     line(timelineWidth/2, yNumber+3, timelineWidth/2, (posY+3));
     line(-timelineWidth/2, yNumber+3, -timelineWidth/2, (posY+3));
   }
-
+  //draw the outline for the first year
+    line(-timelineWidth/2,0-leading, timelineWidth/2,0-leading);
+    line(timelineWidth/2, 0+3, timelineWidth/2, 0-leading);
+    line(-timelineWidth/2, 0+3, -timelineWidth/2, 0-leading);
 }
 
 

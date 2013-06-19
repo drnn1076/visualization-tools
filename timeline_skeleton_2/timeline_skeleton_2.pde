@@ -20,6 +20,8 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>. -->
 
+    Created January 2013
+    
     Last update on 11 June 2013. Ricardo Cedeño Montaña.
     Reason of the update: code update to Processing 2.0
 
@@ -30,12 +32,9 @@ import processing.pdf.*;
 XML xml;
 PFont regular;
 // Period of time covered.
-// Substract one year at the beginning and add one to the end. 
-// E.g. Period 1880- 2000 = 1879 and 2001.
-// This range should cover all the years mentioned in the xml data file, 
-// otherwise an error will be raised.
-int begin = 1869;
-int end = 1961;  
+// This range should cover all the years mentioned in the xml data file, otherwise an error will be raised.
+int begin = 1870;
+int end = 1960;  
 
 // Leading affects the space for each year. If it is too small the font size of
 // the years should be adjusted accordingly. 
@@ -122,13 +121,13 @@ void rectangle(String iName, String iYear, int posY, String iInfo){
   }
   
   // Draw each rectangle adjusting its position with var num
-  rect(timelineWidth/2, (posY-(rectangleWidth*num)+3), rectangleWidth/3,rectangleWidth/3); 
+  rect(timelineWidth/2, ((posY+(leading/2))-(rectangleWidth*num)+3), rectangleWidth/3,rectangleWidth/3); 
   
   // Generate labels for each format.
   fill(80);// Grey
   textFont(regular, 14);// Font size: 14pts
   textAlign(LEFT);
-  text(iName, timelineWidth/2+rectangleWidth, posY-(leading*num)+rectangleWidth/3);
+  text(iName, timelineWidth/2+rectangleWidth, (posY+(leading/2))-(leading*num)+rectangleWidth/3);
   
 } 
 

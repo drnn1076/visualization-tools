@@ -29,6 +29,14 @@
 
 <items xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="timeline-item.xsd">
 	<item>
+		<name>Item 00</name>
+		<date><year>1870</year></date>
+		<info>Include here some more information</info></item>
+	<item>
+		<name>Item 0</name>
+		<date><year>1870</year></date>
+		<info>Include here some more information</info></item>
+	<item>
 		<name>Item 1</name>
 		<date><year>1873</year></date>
 		<info>Include here some more information</info></item>
@@ -59,5 +67,9 @@
 	<item>
 		<name>Item 8</name>
 		<date><year>1950</year></date>
+		<info>Include here some more information</info></item>
+	<item>
+		<name>Item 9</name>
+		<date><year>1960</year></date>
 		<info>Include here some more information</info></item>
 </items>  
