@@ -24,17 +24,33 @@
     
     Last update on 11 June 2013. Ricardo Cedeño Montaña.
     Reason of the update: code update to Processing 2.0
+    
+    Last update on 26 September 2013. Ricardo Cedeño Montaña.
+    Reason of the update: code to automatically set the size of the sketch.
 
 */
 
 import processing.pdf.*;
 
+// Calculate the size of the paper
+// As a reference: A4= 210x297, A3 = 297x420, A2 = 420x594, A1= 594x841mm
+int pageWidth= 594;//in mm
+int pageHeight= 841;//in mm
+float pageWidthInches = pageWidth/25.4;//to inches
+float pageHeightInches = pageHeight/25.4;
+float pageWidthPixels = pageWidthInches*72;//72dpi
+float pageHeightPixels = pageHeightInches*72;
+
+
 XML xml;
 PFont regular;
 // Period of time covered.
-// This range should cover all the years mentioned in the xml data file, otherwise an error will be raised.
+// Substract one year at the beginning and add one to the end. 
+// E.g. Period 1880- 2000 = 1879 and 2001.
+// This range should cover all the years mentioned in the xml data file, 
+// otherwise an error will be raised.
 int begin = 1870;
-int end = 1960;  
+int end = 1940;  
 
 // Leading affects the space for each year. If it is too small the font size of
 // the years should be adjusted accordingly. 
@@ -52,10 +68,8 @@ int timeSpan = end-begin; // Number of years covered.
 int fScale = 2; // Scale for the rectangles and lines of scale
 
 void setup(){
-  //Dimensions in pixels. size(1000, 1536) = 352x541mm. 
-  //As a reference an A2 = 420x594mm, 1191x1684px.
   //It produces a vector based pdf saved where the sketch is located.
-  size(1000, 2800, PDF, "filename.pdf");
+  size(int(pageWidthPixels),int(pageHeightPixels), PDF, "filename.pdf");
   background(255);// White
   smooth();
   

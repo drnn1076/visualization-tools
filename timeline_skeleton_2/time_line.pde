@@ -75,7 +75,6 @@ void timeLine(int begin, int end){
     int aYear = allYears()[yNumber];
     // Get postions for each year
     int posY = listPosY()[yNumber];
-    println(posY);
     //If that year has an item, set fill to black and font size to 16pts.
     if (itemYears.contains(aYear)){
       fill(0);
