@@ -1,8 +1,9 @@
-// Identification of the timelime
+// 7.
+// Type the identification of the timelime 
 String title = "Title"; //add a title between the "".
 String subtitle = "Subtitle";//add a subtitle between the "".
 String author = "Author";//add your name between the "".
-String afiliation1 = "Afiliation";//add an institution between the "".
+String affiliation1 = "Affiliation";//add an institution between the "".
 String wYear = "Date";//add a date between the "".
 
 void label(){
@@ -25,7 +26,7 @@ void label(){
   //afiliation
   textFont(regular, 12); //Font size: 10pts
   textAlign(CENTER);
-  text(afiliation1, width/2, height-(labelsLeading*3)); //(Content, horizontal position, vertical position)
+  text(affiliation1, width/2, height-(labelsLeading*3)); //(Content, horizontal position, vertical position)
   //year
   textFont(regular, 12); //Font size: 10pts
   textAlign(CENTER);
